@@ -79,12 +79,17 @@ class Flo:
 
             file_lines = file.read().strip().split("\n")
 
+            assert len(print_lines) == len(file_lines)
             pairs = zip(print_lines, file_lines)
 
+            self.old_print(file_lines)
+            self.old_print('='*50)
+            self.old_print(print_lines)
             for i, pair in enumerate(pairs):
 
                 actual, expected = pair
-
+                # self.old_print(actual)
+                # self.old_print(expected)
                 assert (
                     actual == expected
                 ), f"line {i + 1} - actual:{actual} - expected:{expected}"
@@ -94,4 +99,5 @@ class Flo:
 
 
 if __name__ == "__main__":
-    Flo.test("tests/flow/bank_one_roll_then_quit.txt")
+    # Flo.test("tests/flow/bank_one_roll_then_quit.txt")
+    Flo.test("tests/flow/living_on_the_edge.txt")
