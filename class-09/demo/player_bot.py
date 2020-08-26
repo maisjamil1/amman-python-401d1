@@ -54,7 +54,7 @@ class BasePlayer:
         )
 
 
-class Naysayer(BasePlayer):
+class Ali(BasePlayer):
     def _mock_input(self, *args, **kwargs):
         return "n"
 
@@ -71,21 +71,26 @@ class NervousNellie(BasePlayer):
             self.roll = tuple(int(char) for char in first_arg.split(","))
         elif first_arg.startswith("Thanks for playing."):
             self.total_score = int(re.findall(r"\d+", first_arg)[0])
+        self.old_print(first_arg)
 
     def _mock_input(self, *args, **kwargs):
         prompt = args[0]
         if prompt.startswith("Wanna play?"):
+            # self.old_print(prompt, 'y')
             return "y"
         elif prompt.startswith("Enter dice to keep (no spaces), or (q)uit:"):
             scorers = GameLogic.get_scorers(self.roll)
             keepers = "".join([str(ch) for ch in scorers])
+            # self.old_print(prompt, keepers)
             return keepers
         elif prompt.startswith("(r)oll again, (b)ank your points or (q)uit "):
+            # self.old_print(prompt, 'b')
             return "b"
         else:
             raise ValueError(f"Unrecognized prompt {prompt}")
 
 
+
 if __name__ == "__main__":
-    # Naysayer.play()
+    # Ali.play(20)
     NervousNellie.play(100)
