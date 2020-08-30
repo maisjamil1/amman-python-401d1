@@ -21,7 +21,30 @@ class Stack:
         self.top = node # top = node(5)
         self.top.next = temp # node(5).next = None
 
+        # x = 7
+        # y = 8
+        # temp = 7
+        # x = y
+        # y = 8
+
     def pop(self):
+        # top -> None
+        # push(5): top ---> Node(5) -> None
+        # push(7): top ---> Node(7) -> Node(5) -> None
+        #            ------------------>
+        # pop() This will return 7
+        # top  Node(7) -> Node(5) -> None
+        #  ------------------>
+        # pop() This will return 5
+        # top  Node(7) -> Node(5) -> None
+        #  -------------------------->
+        # garbage collection:
+        #   a = 4         a -> 4
+        #   b = 9         b -> 9
+        #   a = 2         a -> 2
+        #   c = 4         c -> 4
+
+
         pass
 
     def peek(self):

@@ -36,11 +36,20 @@ class Queue:
 
 if __name__ == '__main__':
     eaters = Queue()
-    print(eaters.peek())
+    # print(eaters.peek())
+    assert eaters.peek().startswith('Empty Queue!!!')
     eaters.enqueue("Saed")
     eaters.enqueue("Ahmad")
+    # assert eaters.peek().startswith('Empty Queue!!!')
     # print(eaters.dequeue()) # should return Saed
-    print(eaters.front.value) # Saed
-    print(eaters.rear.value) # Ahmad
-    print(eaters.peek()) # Saed
+    # print(eaters.front.value) # Saed
+    # print(eaters.rear.value) # Ahmad
+    # print(eaters.peek()) # Saed
+    assert eaters.front.value == 'Saed'
+    assert eaters.rear.value == 'Ahmad'
+    # assert eaters.dequeue() == 'Saed'
+    # assert eaters.dequeue() == 'Ahmad'
+    print('Good job! All tests passed')
+
+
 
