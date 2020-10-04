@@ -6,17 +6,17 @@ Given a binary tree, print it in reverse from leaf level to root level
 - Output: list
 
 # Visuals
-
+```python
+"""
 	    	    7
     	3		        9
     2	   10       1     -3
   4   N   N   1   N  N   N   6
 			                N   3
+"""
 
-[3, 4, 1, 6, 2, 10, 1, -3, 3, 9, 7]
-Queue = []
-output = [7, 3, 9, 2, 10, 1, -3, 4, 1, 6, 3]
-
+expected = [3, 4, 1, 6, 2, 10, 1, -3, 3, 9, 7]
+```
 
 # Algorithm:
 - import Queue
@@ -33,8 +33,10 @@ output = [7, 3, 9, 2, 10, 1, -3, 4, 1, 6, 3]
 - return reverse _traverse()
 
 ## First check
+```python
 reverse =  [3, 6, 1, 4, -3, 1, 10, 2, 9, 3, 7]
 expected = [3, 4, 1, 6, 2, 10, 1, -3, 3, 9, 7]
+```
 - So we need to modify the algorithm to enqueue right then left
 
 
