@@ -49,6 +49,21 @@ class LinkedList:
                 return item
         raise IndexError
 
+    # Alternative way - Old school
+    # def __getitem__(self, index):
+    #     if index < 0:
+    #         index = len(self) + index
+
+    #     current = self.head
+    #     current_index = 0
+    #     while current:
+    #         if index == current_index:
+    #             return current.value
+    #         current = current.next
+    #         current_index += 1
+
+    #     raise IndexError
+
     def insert(self, value):
         self.head = Node(value, self.head)
 
@@ -84,3 +99,10 @@ if __name__ == "__main__":
 
     nums = LinkedList([1,2,3,4,5,6,7,8])
     print(LinkedList([num for num in nums if num%2==0]))
+
+
+
+    nums = [4,7,2,9]
+
+    for index, item in enumerate(nums):
+        print f"item: {item}, index: {index}"

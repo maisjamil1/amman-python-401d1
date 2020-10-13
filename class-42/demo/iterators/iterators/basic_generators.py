@@ -2,15 +2,16 @@
 
 if __name__ == "__main__":
 
+    names = ['samer', 'bashar', 'aziz', 'majd', 'basma']
     def gen():
-        for i in range(10):
-            yield i
+        for name in names:
+            yield name
 
-    num_gen = gen()
+    names_gen = gen()
 
     try:
         for i in range(20):
-            print(next(num_gen))
+            print(next(names_gen))
     except StopIteration:
         print("I don't have nay more")
 
